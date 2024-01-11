@@ -1,22 +1,25 @@
-import inquirer from "inquirer";
-let convertion = {
+#!/usr/bin/env nod
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var inquirer_1 = require("inquirer");
+var convertion = {
     "PKR": {
-        "USD": 0.0044,
-        "GBP": 0.0037,
+        "USD": 0.003494,
+        "GBP": 0.0028,
         "PKR": 1
     },
     "GBP": {
-        "USD": 1.21,
-        "PKR": 271.79,
+        "USD": 1.23,
+        "PKR": 353.3,
         "GBP": 1
     },
     "USD": {
-        "PKR": 225.50,
+        "PKR": 286.15,
         "GBP": 0.083,
         "USD": 1
     }
 };
-const answer = await inquirer.prompt([
+var answer = await inquirer_1.default.prompt([
     {
         type: "list",
         name: "from",
@@ -35,10 +38,10 @@ const answer = await inquirer.prompt([
         message: "Enter your convertion amount:"
     }
 ]);
-const { from, to, amount } = answer;
+var from = answer.from, to = answer.to, amount = answer.amount;
 if (from && to && amount) {
-    let result = convertion[from][to] * amount;
-    console.log(`your convertion from ${from}to ${to} is ${result}`);
+    var result = convertion[from][to] * amount;
+    console.log("your convertion from ".concat(from, "to ").concat(to, " is ").concat(result));
 }
 else {
     console.log('Invalid input');

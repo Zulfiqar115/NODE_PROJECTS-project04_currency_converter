@@ -1,5 +1,5 @@
+#!/usr/bin/env nod
 import inquirer from "inquirer";
-
 let convertion = {
     "PKR":{
     "USD": 0.003494,
